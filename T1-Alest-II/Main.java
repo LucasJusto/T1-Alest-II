@@ -2,7 +2,6 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
-import java.util.Set;
 import java.util.ArrayList;
 
 public class Main{
@@ -10,9 +9,9 @@ public class Main{
         Scanner user=new Scanner(System.in);
         System.out.println("Digite o diretorio do arquivo para extracao de dados(exemplo: casos/casoJB4a): ");
         File arch=new File(user.next());
+	long initialTime = System.currentTimeMillis();
         Scanner in = new Scanner(arch);
         HashMap<String,Son> children = new HashMap<String,Son>();
-        HashMap<String,Father> fathers = new HashMap<String,Father>();
         ArrayList<String> fathersName = new ArrayList<String>();
         HashMap<String,ArrayList<Son>> childrenList = new HashMap<String,ArrayList<Son>>();
         double lands = in.nextDouble();
@@ -23,8 +22,6 @@ public class Main{
             fathersName.add(father);
             Son s = new Son(son,father,sonLands);
             Father f = new Father(father,son);
-            if(fathers.containsKey(father))fathers.get(father).childrenNumber++;
-            else fathers.put(father,f);
             if(childrenList.containsKey(father))childrenList.get(father).add(s);
             else {
                 childrenList.put(father,new ArrayList<Son>());
@@ -32,16 +29,20 @@ public class Main{
             }
             children.put(son,s);
         }
-        Father treeGenerator = findTreeGenerator(fathersName,fathers,children);
-        WarriorTree tree = new WarriorTree(fathers,children,fathersName,childrenList,treeGenerator.name,lands);
+        String treeGenerator = findTreeGenerator(fathersName,children);
+        WarriorTree tree = new WarriorTree(children,fathersName,childrenList,treeGenerator,lands);
         tree.build(tree.getRoot());
         tree.buildLands(tree.getTreeGenerator());
         //tree.print(tree.getRoot());
         System.out.println(tree.getAnswer(tree.getRoot()));
+	long finalTime = System.currentTimeMillis();
+	double durationSeconds = (finalTime-initialTime)/1000.0;
+	long durationMilliSeconds = finalTime-initialTime;
+	System.out.println("Time: "+durationSeconds+"s"+"     or    "+durationMilliSeconds+"ms");
     }
-    public static Father findTreeGenerator(ArrayList<String> fathersName,HashMap<String,Father> fathers, HashMap<String,Son> children){
+    public static String findTreeGenerator(ArrayList<String> fathersName, HashMap<String,Son> children){
         for(String f:fathersName){
-            if(children.get(f)==null)return fathers.get(f);
+            if(children.get(f)==null)return f;
         }
         return null;        
     }
