@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+
 public class WarriorTree{
     private Node root;
-    private HashMap<String,Father> fathers;
     private HashMap<String,Son> children;
     private ArrayList<String> fathersName;
     private HashMap<String,ArrayList<Son>> childrenList;
@@ -22,8 +22,7 @@ public class WarriorTree{
             return name+"   "+lands;
         }     
     }
-    public WarriorTree(HashMap<String,Father> fathers,HashMap<String,Son> children,ArrayList<String>fathersName,HashMap<String,ArrayList<Son>> childrenList,String f, double lands){
-        this.fathers=fathers;
+    public WarriorTree(HashMap<String,Son> children,ArrayList<String>fathersName,HashMap<String,ArrayList<Son>> childrenList,String f, double lands){
         this.children=children;
         this.fathersName=fathersName;
         this.childrenList=childrenList;
@@ -32,7 +31,7 @@ public class WarriorTree{
     }
     public void build(Node n){
         for(Node a:n.children){
-            if(fathers.get(a.name)!=null){
+            if(childrenList.get(a.name)!=null){
                 a.children=convertToNodeList(childrenList.get(a.name));
             }
             build(a);
@@ -54,7 +53,7 @@ public class WarriorTree{
     }
     public void buildLands(Node f){
         for(Node n:f.children){
-            n.lands+= f.lands/fathers.get(f.name).childrenNumber;
+            n.lands+= f.lands/childrenList.get(f.name).size();
             buildLands(n);
         }
     }
