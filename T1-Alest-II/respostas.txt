@@ -1,24 +1,29 @@
-casoJB4a: Rimeemicpox   25307.0   31ms
+nome do caso;  guerreiro;  terras; tempo em ms;  qnts membros na familia
 
-casoJB4b:Nepulacritrikix   12629.9   45ms
+meu: Deldriralex   56519.5  21ms  5
 
-casoJB8a: Cristiumimonlax   21531.0   61ms
+enunciado: Alteetoflex   26799.4  27ms   16
 
-casoJB8b: Stropunngemonstax   16457.416666666664  128ms
+casoJB4b:Nepulacritrikix   12629.9   31ms  30
 
-casoJB10a: Nepstitrigax   13964.85   282ms
+casoJB4a: Rimeemicpox   25307.0   31ms  31 
 
-casoJB10b: Delrenvax   11624.842105263157   168ms
+casoJB8a: Cristiumimonlax   21531.0   61ms  239
 
-casoJB12a: Gruvervix   12579.923076923078   330ms
+casoJB8b: Stropunngemonstax   16457.416666666664  128ms  2004
 
-casoJB12b: Prepeeblepscapox   14002.888888888889  293ms
+casoJB10b: Delrenvax   11624.842105263157   168ms  4071
 
-casoJB14a: Carmanclox   12181.941654253089  1337ms
+casoJB10a: Nepstitrigax   13964.85   282ms  17524
 
-casoJB14b: Gruumimontex   11857.975401839749  1017ms
+casoJB12b: Prepeeblepscapox   14002.888888888889  293ms  19954
 
-enunciado: Alteetoflex   26799.4  27ms
+casoJB12a: Gruvervix   12579.923076923078   330ms  21569
 
-meu: Deldriralex   56519.5  21ms
+casoJB14b: Gruumimontex   11857.975401839749  1017ms  125197
+
+casoJB14a: Carmanclox   12181.941654253089  1337ms  169908
+
+
+
 
