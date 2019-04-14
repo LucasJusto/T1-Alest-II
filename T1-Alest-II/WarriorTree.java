@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-
 public class WarriorTree{
     private Node root;
     private HashMap<String,Son> children;
