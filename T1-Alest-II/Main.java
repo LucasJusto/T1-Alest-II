@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
+import java.util.Set;
 import java.util.ArrayList;
 
 public class Main{
@@ -21,7 +22,6 @@ public class Main{
             double sonLands = in.nextDouble();
             fathersName.add(father);
             Son s = new Son(son,father,sonLands);
-            Father f = new Father(father,son);
             if(childrenList.containsKey(father))childrenList.get(father).add(s);
             else {
                 childrenList.put(father,new ArrayList<Son>());
